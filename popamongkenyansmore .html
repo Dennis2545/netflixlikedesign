@@ -1,0 +1,459 @@
+<head>
+  <style>
+  body {
+color: #536482;
+background-color: black;
+}
+  
+
+/* CSS VARIABLES */
+:root {
+  --primary: #141414;
+  --light: #F3F3F3;
+  --dark: 	#686868;
+}
+
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+  color: var(--light);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+img {
+  height: 250;
+    margin: 4;
+    padding: 4;
+  max-width: 95%;
+}
+
+h1 {
+  padding-top: 60px;  
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+header {
+  padding: 20px 20px 0 20px;
+  position: fixed;
+  top: 0;
+  display: grid;  
+  grid-gap:5px;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: 
+   "nt mn mn sb . . . "; 
+  background-color: var(--primary);
+  width: 100%;
+  margin-bottom: 0px;  
+}
+
+.netflixLogo {
+  grid-area: nt;
+  object-fit: cover;
+  width: 100px;
+  max-height: 100%;
+  
+  padding-left: 30px;
+  padding-top: 0px;  
+}
+
+.soloca img {  
+  height: 35px;     
+}
+
+#logo {
+  color: #E50914;  
+  margin: 0; 
+  padding: 0; 
+}
+
+
+.main-nav {
+  grid-area: mn;
+  padding: 0 30px 0 20px;
+}
+
+.main-nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 5px;  
+}
+
+.main-nav a:hover {
+  color: var(--dark);
+}
+
+.sub-nav {
+  grid-area: sb;
+  padding: 0 40px 0 40px;
+}
+
+.sub-nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 5px;
+}
+
+.sub-nav a:hover {
+  color: var(--dark);
+}
+
+
+/* MAIN CONTIANER */
+.main-container {
+  padding: 50px;
+}
+
+.box {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+
+.box a {
+  transition: transform .3s;  
+}
+
+.box a:hover {
+  transition: transform .3s;
+  -ms-transform: scale(1.4);
+  -webkit-transform: scale(1.4);  
+  transform: scale(1.4);
+}
+
+.box img {
+  border-radius: 2px;
+}
+
+/* LINKS */
+.link {
+  padding: 50px;
+}
+
+.sub-links ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sub-links a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.sub-links a:hover {
+  color: var(--dark);
+  text-decoration: underline;
+}
+
+.logos a{
+  padding: 10px;
+}
+
+.logo {
+  color: var(--dark);
+}
+
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--dark);
+  margin: 10px;
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width: 900px) {
+
+  header {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "nt nt nt  .  .  . sb . . . "
+    "mn mn mn mn mn mn  mn mn mn mn";
+  }
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+
+}
+
+@media(max-width: 700px) {
+
+  header {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "nt nt nt  .  .  . sb . . . "
+    "mn mn mn mn mn mn  mn mn mn mn";
+  }
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+
+  .sub-links ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+   
+}
+
+@media(max-width: 500px) {
+
+  .wrapper {
+    font-size: 15px;
+  }
+
+  header {
+    margin: 0;
+    padding: 20px 0 0 0;
+    position: static;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+    "nt"    
+    "mn"
+    "sb";
+    text-align: center;
+  }
+
+  .netflixLogo {
+    max-width: 100%;
+    margin: auto;
+    padding-right: 20px;
+  }
+
+  .main-nav {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+ 
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;    
+  }
+
+  .box a:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);  
+    transform: scale(1.2);
+  }
+
+  .logos {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+
+  .sub-links ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    font-size: 15px;
+  }
+
+  
+
+  
+   
+}
+  </style>
+</head>
+<table>
+  <tr>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    <td> <a href="pamong/bloodties.html"><img src="picturesVideoThumbnails/bloodties.jpg" width="300"></a></td>
+    <td> <a href="pamong/evil.html"><img src="picturesVideoThumbnails/evil.jpg" width="300"></a></td>
+    <td> <a href="pamong/fault.html"><img src="picturesVideoThumbnails/fault.jpg" width="300"></a></td>
+    
+  
+  </tr>
+  
+  <tr>
+    <td> <a href="pamong/gheto.html"><img src="picturesVideoThumbnails/gheto.png" width="300"></a></td>
+    <td> <a href="pamong/grader.html"><img src="picturesVideoThumbnails/grader.jpg" width="300"></a></td>
+    <td> <a href="pamong/jeraha.html"><img src="picturesVideoThumbnails/jeraha.jpg" width="300"></a></td>
+    <td> <a href="pamong/katikati.html"><img src="picturesVideoThumbnails/katikati.jpg" width="300"></a></td>
+    
+</table>
+<table>
+  <tr>
+    <td> <a href="pamong/linda.html"><img src="picturesVideoThumbnails/linda.jpg" width="300"></a></td>
+    <td> <a href="pamong/loveislove.html"><img src="picturesVideoThumbnails/loveislove.jpg" width="300"></a></td>
+    <td> <a href="pamong/maasai.html"><img src="picturesVideoThumbnails/maasai.jpg" width="300"></a></td>
+    <td> <a href="pamong/malooned.html"><img src="picturesVideoThumbnails/malooned.jpg" width="300"></a></td>
+    
+  </tr>
+  
+  <tr>
+    <td> <a href="pamong/missionrescue.html"><img src="picturesVideoThumbnails/missionrescue.jpg" width="300"></a></td>
+    <td> <a href="pamong/mistake.html"><img src="picturesVideoThumbnails/mistake.jpg" width="300"></a></td>
+    <td> <a href="pamong/mviko.html"><img src="picturesVideoThumbnails/mviko.jpg" width="300"></a></td>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    
+  </tr></table>
+<table>
+  <tr>
+    <td> <a href="pamong/painandlove.html"><img src="picturesVideoThumbnails/painandlove.jpg" width="300"></a></td>
+    <td> <a href="pamong/planb.html"><img src="picturesVideoThumbnails/planb.jpg" width="300"></a></td>
+    <td> <a href="pamong/regrets.html"><img src="picturesVideoThumbnails/regrets.jpg" width="300"></a></td>
+    <td> <a href="pamong/savingc.html"><img src="picturesVideoThumbnails/savingc.jpg" width="300"></a></td>
+    
+  </tr>
+  
+  <tr>
+    <td> <a href="pamong/shamelessfather.html"><img src="picturesVideoThumbnails/shamelessfather.jpg" width="300"></a></td>
+    <td> <a href="pamong/shamelesssister.html"><img src="picturesVideoThumbnails/shamelesssister.jpg" width="300"></a></td>
+    <td> <a href="pamong/somethingn.html"><img src="picturesVideoThumbnails/somethingn.jpg" width="300"></a></td>
+    <td> <a href="pamong/soulb.html"><img src="picturesVideoThumbnails/soulb.jpg" width="300"></a></td>
+    
+  </tr></table>
+<table>
+  <tr>
+    <td> <a href="pamong/twisted.html"><img src="picturesVideoThumbnails/twisted.jpg" width="300"></a></td>
+    <td> <a href="pamong/tatiana.html"><img src="picturesVideoThumbnails/tatiana.jpg" width="300"></a></td>
+    <td> <a href="pamong/theassignment.html"><img src="picturesVideoThumbnails/theassignment.jpg" width="300"></a></td>
+    <td> <a href="pamong/twisted.html"><img src="picturesVideoThumbnails/twisted.jpg" width="300"></a></td>
+    
+       </tr>
+  
+  <tr>
+    <td> <a href="pamong/twofools.html"><img src="picturesVideoThumbnails/twofools.jpg" width="300"></a></td>
+    <td> <a href="pamong/usaliti.html"><img src="picturesVideoThumbnails/usaliti.jpg" width="300"></a></td>
+    <td> <a href="pamong/veve.html"><img src="picturesVideoThumbnails/vev.jpg" width="300"></a></td>
+    <td> <a href="pamong/soloca.html"><img src="picturesVideoThumbnails/soloca.png" width="300"></a></td>
+    
+  
+  </tr></table>
+<table>
+  <tr>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    <td> <a href="pamong/bloodties.html"><img src="picturesVideoThumbnails/bloodties.jpg" width="300"></a></td>
+    <td> <a href="pamong/evil.html"><img src="picturesVideoThumbnails/evil.jpg" width="300"></a></td>
+    <td> <a href="pamong/fault.html"><img src="picturesVideoThumbnails/fault.jpg" width="300"></a></td>
+    
+  </tr>
+  
+  <tr>
+    <td> <a href="pamong/watatu.html"><img src="picturesVideoThumbnails/watatu.webp" width="300"></a></td>
+    <td> <a href="pamong/youa.html"><img src="picturesVideoThumbnails/youa.jpg" width="300"></a></td>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    
+  </tr></table>
+<table>
+  <tr>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    <td> <a href="pamong/bloodties.html"><img src="picturesVideoThumbnails/bloodties.jpg" width="300"></a></td>
+    <td> <a href="pamong/evil.html"><img src="picturesVideoThumbnails/evil.jpg" width="300"></a></td>
+    <td> <a href="pamong/fault.html"><img src="picturesVideoThumbnails/fault.jpg" width="300"></a></td>
+    
+  </tr>
+  
+  <tr>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    <td> <a href="pamong/bloodties.html"><img src="picturesVideoThumbnails/bloodties.jpg" width="300"></a></td>
+    <td> <a href="pamong/evil.html"><img src="picturesVideoThumbnails/evil.jpg" width="300"></a></td>
+    <td> <a href="pamong/fault.html"><img src="picturesVideoThumbnails/fault.jpg" width="300"></a></td>
+    
+  </tr></table>
+<table>
+  <tr>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    <td> <a href="pamong/bloodties.html"><img src="picturesVideoThumbnails/bloodties.jpg" width="300"></a></td>
+    <td> <a href="pamong/evil.html"><img src="picturesVideoThumbnails/evil.jpg" width="300"></a></td>
+    <td> <a href="pamong/fault.html"><img src="picturesVideoThumbnails/fault.jpg" width="300"></a></td>
+    
+  </tr>
+  
+  <tr>
+    <td> <a href="pamong/painandlove.html"><img src="picturesVideoThumbnails/painandlove.jpg" width="300"></a></td>
+    <td> <a href="pamong/planb.html"><img src="picturesVideoThumbnails/planb.jpg" width="300"></a></td>
+    <td> <a href="pamong/regrets.html"><img src="picturesVideoThumbnails/regrets.jpg" width="300"></a></td>
+    <td> <a href="pamong/savingc.html"><img src="picturesVideoThumbnails/savingc.jpg" width="300"></a></td>
+    
+  </tr></table>
+<table>
+  <tr>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    <td> <a href="pamong/bloodties.html"><img src="picturesVideoThumbnails/bloodties.jpg" width="300"></a></td>
+    <td> <a href="pamong/evil.html"><img src="picturesVideoThumbnails/evil.jpg" width="300"></a></td>
+    <td> <a href="pamong/fault.html"><img src="picturesVideoThumbnails/fault.jpg" width="300"></a></td>
+    
+  </tr>
+  
+  <tr>
+    <td> <a href="pamong/painandlove.html"><img src="picturesVideoThumbnails/painandlove.jpg" width="300"></a></td>
+    <td> <a href="pamong/planb.html"><img src="picturesVideoThumbnails/planb.jpg" width="300"></a></td>
+    <td> <a href="pamong/regrets.html"><img src="picturesVideoThumbnails/regrets.jpg" width="300"></a></td>
+    <td> <a href="pamong/savingc.html"><img src="picturesVideoThumbnails/savingc.jpg" width="300"></a></td>
+    
+  </tr></table>
+<table>
+  <tr>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    <td> <a href="pamong/bloodties.html"><img src="picturesVideoThumbnails/bloodties.jpg" width="300"></a></td>
+    <td> <a href="pamong/evil.html"><img src="picturesVideoThumbnails/evil.jpg" width="300"></a></td>
+    <td> <a href="pamong/fault.html"><img src="picturesVideoThumbnails/fault.jpg" width="300"></a></td>
+    
+  </tr>
+  
+  <tr>
+    <td><img src="picturesVideoThumbnails/youa.jpg" width="300"></td>
+    <td><img src="picturesVideoThumbnails/bloodties.jpg" width="300"></td>
+    <td><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></td>
+    <td><img src="picturesVideoThumbnails/vev.jpg" width="300"></td>
+ 
+  </tr></table>
+<table>
+  <tr>
+    <td> <a href="pamong/nairobi24.html"><img src="picturesVideoThumbnails/nairobi24.jpg" width="300"></a></td>
+    <td> <a href="pamong/bloodties.html"><img src="picturesVideoThumbnails/bloodties.jpg" width="300"></a></td>
+    <td> <a href="pamong/evil.html"><img src="picturesVideoThumbnails/evil.jpg" width="300"></a></td>
+    <td> <a href="pamong/fault.html"><img src="picturesVideoThumbnails/fault.jpg" width="300"></a></td>
+    
+  </tr>
+  
+  <tr>
+    <td> <a href="pamong/painandlove.html"><img src="picturesVideoThumbnails/painandlove.jpg" width="300"></a></td>
+    <td> <a href="pamong/planb.html"><img src="picturesVideoThumbnails/planb.jpg" width="300"></a></td>
+    <td> <a href="pamong/regrets.html"><img src="picturesVideoThumbnails/regrets.jpg" width="300"></a></td>
+    <td> <a href="pamong/savingc.html"><img src="picturesVideoThumbnails/savingc.jpg" width="300"></a></td>
+      </tr></table>
